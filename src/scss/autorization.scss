@@ -1,4 +1,5 @@
 .page {
+    font-family: Montserrat;
     background: #30353E;
     width: 100%;
     height: 100%;
@@ -91,11 +92,11 @@
 }
 
 .faded {
-    animation: fade1 0.25s 0.1s forwards;
+    animation: fade1 0.3s 0.1s forwards;
 }
 
 .un-faded {
-    animation: fade2 0.25s 0.1s backwards;
+    animation: fade2 0.3s 0.1s backwards;
 }
     
   @keyframes fade1 {

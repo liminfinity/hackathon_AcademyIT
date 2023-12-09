@@ -1,0 +1,125 @@
+.page {
+  font-family: Montserrat;
+  background: #30353E;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.content {
+  width: 630px;
+  height: 630px;
+  border-radius: 25px;
+  background: url('/assets/background.svg');
+  border: 2px solid #BDBDBD;
+}
+
+.header {
+  height: 60px;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 50px;
+  align-items: center;
+}
+
+.account {
+  position: relative;
+}
+
+.account_title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.account_settings {
+  width: fit-content;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.entry-history-list {
+  display: flex;
+  flex-direction: column;
+  height: 570px;
+  overflow-y: auto;
+  gap: 5px;
+}
+
+.entry-history-list_item{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 45px;
+  margin: 0 5px;
+  height: 50px;
+  align-items: center;
+  border: 2px solid #BDBDBD;
+  border-radius: 10px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.49) 0%, rgba(255, 255, 255, 0.17) 103.28%);
+  backdrop-filter: blur(50px);
+  color: #30353E;
+  font-size: 24px;
+}
+
+.account_menu {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 270px;
+  height: 50px;
+  border-radius: 25px;
+  background: #D9D9D9;
+  display: none;
+
+}
+
+.account_settings p {
+  user-select: none;
+}
+
+.account_menu_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account_menu_link {  
+  color: #30353E;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.account_settings:hover {
+  opacity: 0.7;
+}
+
+.account_settings:active {
+  opacity: 0.5;
+}
+
+.delete-session-link {
+  display: block;
+  text-decoration: none;
+  height: 32px;
+}
+
+.delete-session-link:hover {
+  opacity: 0.7;
+}
+
+.delete-session-link:active {
+  opacity: 0.5;
+}
