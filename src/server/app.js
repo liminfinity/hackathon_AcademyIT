@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const express = require('express')
+const express = require('express');
+const { request } = require('http');
 
 const app = express();
 
@@ -19,6 +20,10 @@ app.get('/', (_, res) => {
 })
 app.get('/autorization', (_, res) => {
     res.sendFile(path.resolve('public/html/autorization.html'));
+})
+app.post('/autorization', (request, response) => {
+    console.log(request.body.blob_img)
+    
 })
 app.get('/registration', (_, res) => {
     res.sendFile(path.resolve('public/html/registration.html'));
