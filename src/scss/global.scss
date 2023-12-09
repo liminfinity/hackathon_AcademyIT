@@ -32,4 +32,32 @@ input, button {
   appearance: none;
 }
 
+.dark-button {
+  cursor: pointer;
+  color: #FFF;
+  background-color: #30353E;
+  font-size: 20px;
+}
 
+.light-button {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  font-size: 20px;
+  color: #30353E;
+}
+
+.dark-button:hover {
+  opacity: 0.7;
+}
+
+.dark-button:active{
+  opacity: 0.5;
+}
+
+.light-button:hover {
+  opacity: 0.7;
+}
+
+.light-button:active{
+  opacity: 0.5;
+}
