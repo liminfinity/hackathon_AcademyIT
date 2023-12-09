@@ -8,6 +8,7 @@ class Registration {
     #cancel_button
     #signup_button
     #button_login
+    #reg_form
     #user_data = {
         first_name: document.getElementById('first_name'),
         last_name: document.getElementById('last_name'),
@@ -18,21 +19,40 @@ class Registration {
         this.#video.classList.toggle('hidden')
         this.#button_reg = document.getElementById('make-photo_button');
         this.#cancel_button = document.getElementById('cancel_button');
-        this.#signup_button = document.getElementById('registration');
-        this.#button_login = document.querySelector('.button-login')
+        this.#signup_button = document.querySelector('.button-reg');
+        this.#button_login = document.querySelector('.button-login');
+        this.#reg_form = document.getElementById('registration');
         this.#init()
     }
     #init() {
         this.#cancel_button.addEventListener('click', () => {
             this.#closeCamera();
         })
-        this.#signup_button.addEventListener('submit', (e) => {
+        this.#reg_form.addEventListener('submit', (e) => {
             e.preventDefault();
             if (this.#validUserData()) {
+                const button_cancel = document.querySelector('.signin-face-form_cancel-button')
+                const button_makepic = document.querySelector('.signin-face-form_enter-button')
+                const form = document.querySelector('.reg-form');
+                const make_pic = document.querySelector('.signin-face-form')
+                form.classList.add('form-hidden')
+                make_pic.classList.add('make-pic-visible')
+
+                form.classList.remove('form-visible')
+                make_pic.classList.remove('make-pic-hidden')
+
+                button_cancel.classList.remove('make-button-hidden')
+                button_makepic.classList.remove('make-button-hidden')
+                button_cancel.classList.add('make-button-visible')
+                button_makepic.classList.add('make-button-visible')
+                setTimeout(() => {
+                    button_cancel.style.opacity = 1;
+                    button_makepic.style.opacity = 1;
+                }, 490);
                 this.#openCamera()
             }
             else {
-                console.log("Неверный формат данных")
+                ErrorControl(document.querySelector('.reg-form'),  createErrorComponent("Неверный формат данных"));
             }
             
         })
