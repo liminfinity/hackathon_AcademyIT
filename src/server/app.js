@@ -13,6 +13,8 @@ app.use('/html', express.static(path.resolve('public/html')));
 
 app.use('/js', express.static(path.resolve('public/js')));
 
+app.use('/assets', express.static(path.resolve('public/images')));
+
 app.use(express.json());
 
 app.get('/', (_, res) => {
