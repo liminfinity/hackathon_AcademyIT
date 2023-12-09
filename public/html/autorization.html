@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/autorization.css">
-    <title>Document</title>
+    <script src="js/signinlayout.js"></script>
+    <title>Вход</title>
 </head>
-<body>
-    
+<body class="page">
+  <main class="content">
+    <section class="signin-face-form">
+      <div class="video-container">
+        <video src="" muted class="video" poster=""></video>
+        <div class="signin-face-form_button-container">
+          <button id="make-photo_button" class="light-button signin-face-form_enter-button">
+            Сделать фотографию
+          </button>
+          <button id="cancel_button" class="dark-button signin-face-form_cancel-button">
+            Отменить
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="signin-entry">
+        <h1 class="signin-entry_header">Войти в учетную запись</h1>
+        <div class="signin-entry_button-container">
+          <button id="signin_button" class="dark-button signin-entry_button">
+            Войти
+          </button>
+          <button id="signup_button" class="light-button signin-entry_button">
+            Еще нет учетной записи?
+          </button>
+        </div>
+      </section>
+  </main>
 </body>
 </html>
