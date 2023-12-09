@@ -13,20 +13,25 @@
 <body>
     <div class="content">
        <section class="reg-form">
-          <form id="registration" action="/apply/" method="POST">
-             <h2>Создание учетной записи</h2>
-             <label>
-                <input type="text" name="name" id="name" placeholder="Имя" required autofocus>
-             </label>
-             <label>
-                <input type="text" name="lat_name" id="last_name" placeholder="Фамилия" required autofocus>
-             </label>
-             <label>
-                <input type="text" name="phone" id="phone" placeholder="Телефон" required autofocus>
-             </label>
-             <a href="#" class="button-reg">Зарегистрироваться</a>
-             <a href="#" class="log-in">Уже есть учетная запись?</a>
-          </form>
+        <div class="reg-box">
+            <h2>Создание учетной записи</h2>
+            <form id="registration" action="/apply/" method="POST">
+                <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Имя</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Фамилия</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Телефон</label>
+                </div>
+                <a href="#" class="button button-reg">Зарегистрироваться</a>
+                <a href="#" class="button button-login">Уже есть учетная запись?</a>
+             </form>
+        </div>
        </section>
        <section class="signin-face-form">
           <div class="video-container">
