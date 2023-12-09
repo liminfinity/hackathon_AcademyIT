@@ -23,9 +23,11 @@ app.get('/', (_, res) => {
 app.get('/autorization', (_, res) => {
     res.sendFile(path.resolve('public/html/autorization.html'));
 })
+app.get('/account', (_, res) => {
+    res.sendFile(path.resolve('public/html/account.html'));
+})
 app.post('/autorization', (request, response) => {
     console.log(request.body.blob_img)
-    
 })
 app.get('/registration', (_, res) => {
     res.sendFile(path.resolve('public/html/registration.html'));
