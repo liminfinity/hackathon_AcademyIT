@@ -1,0 +1,224 @@
+body {
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #30353E;
+}
+.content {
+   width: 50%;
+   height: 80%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+.reg-form {
+   width: calc(50% + 100px);
+   height: 100%;
+   min-width: 300px;
+   position: absolute;
+   left: 10%;
+   top: 16px;
+   border-radius: 25px;
+   border: none;
+   background: linear-gradient(140deg, rgba(255, 255, 255, 0.49) 0%, rgba(255, 255, 255, 0.17) 103.28%);
+   backdrop-filter: blur(50px);
+
+   z-index: 2;
+}
+.reg-box {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   padding: 5%;
+   & .user-box {
+      position: relative;
+      padding: 10px 0;
+   }
+}
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 90%;
+}
+.reg-box .user-box input {
+   width: 100%;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   margin-bottom: 10px;
+   border: none;
+   border-bottom: 1px solid #fff;
+   outline: none;
+   background: transparent;
+}
+.reg-box .user-box label {
+   position: absolute;
+   top:0;
+   left: 0;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   pointer-events: none;
+   transition: .5s;
+}
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -15px;
+  left: 0;
+  font-size: 12px;
+}
+.button {
+   width: 85%;
+   height: 50px;
+   border-radius: 45px;
+   border: none;
+   padding: 0;
+   margin: 15px auto;
+}
+.reg-box form .button {
+   margin: 20px auto 0 auto;
+}
+h2 {
+   font-size: 26px;
+   width: 90%;
+   font-weight: 400;
+   padding: 30px 0;
+   text-align: start;
+}
+.signin-face-form {
+   position: absolute;
+   right: 10%;
+   top: 0;
+   width: calc(40% + 100px);
+   height: 90%;
+   min-width: 300px;
+   display: flex;
+   align-items: center;
+   align-content: center;
+   justify-content: flex-end;
+   flex-direction: column;
+   background: url('/assets/background.svg') no-repeat;
+   border-radius: 15px;
+   font-size: 14px;
+}
+   .signin-face-form_button-container {
+      display: flex;
+      gap: 3%;
+   }
+   .button {
+      font-size: 14px;
+      height: 40px;
+   }
+   .signin-face-form_enter-button {
+      width: 80%;
+      opacity: 0;
+   }
+   .signin-face-form_cancel-button {
+      width: 45%;
+      opacity: 0;
+   }
+      
+
+.form-hidden {
+   animation: form-to-hidden 1.5s forwards;
+}
+.form-visible {
+   animation: form-to-visible 1s;
+}
+.make-pic-visible {
+   animation: make-pic-visible .5s forwards ease-in-out;
+}
+.make-pic-hidden {
+   animation: make-pic-hidden .5s ease-in-out;
+}
+.make-button-hidden {
+   animation: make-button-hidden .5s ease-in-out;
+}
+.make-button-visible {
+   animation: make-button-visible .5s ease-in-out;
+}
+
+.video-container {
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   padding-bottom: 55px;
+ }
+
+.video {
+   background-color: #fff;
+   max-width: 100%;
+   border-radius: 25px 25px 0 0;
+}
+
+@keyframes form-to-hidden {
+   0% {
+      left: 10%;
+      display: block;
+   }
+   100% {
+      left: -200%;
+      display: none;
+   }
+}
+@keyframes form-to-visible {
+   0% {
+      left: -200%;
+      display: none;
+   }
+   100% {
+      left: 10%;
+      display: block;
+   }
+}
+@keyframes make-pic-visible {
+   0% {
+      right: 10%; 
+      width: calc(40% + 100px);
+   }
+   100% {
+      right: 20%; // тут аккуратно потом переделаю слишком костыльно
+      width: calc(50% + 100px);
+   }
+}
+@keyframes make-pic-hidden {
+   0% {
+      right: 20%; // тут аккуратно потом переделаю слишком костыльно
+      width: calc(50% + 100px);
+   }
+   100% {
+      right: 10%; 
+      width: calc(40% + 100px);
+   }
+}
+
+@keyframes make-button-hidden {
+   0% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+@keyframes make-button-visible {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
