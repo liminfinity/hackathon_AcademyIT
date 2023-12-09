@@ -6,31 +6,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/global.css"/>
+    <link rel="stylesheet" href="css/registration.css">\
+    <script type="module" src="js/registration.js" defer></script>
     <title>Регистрация</title>
 </head>
 <body>
     <div class="content">
        <section class="reg-form">
-          <form id="registration" action="/apply/" method="POST">
-             <h2>Создание учетной записи</h2>
-             <label>
-                <input type="text" name="name" id="name" placeholder="Имя" required autofocus>
-             </label>
-             <label>
-                <input type="text" name="lat_name" id="last_name" placeholder="Фамилия" required autofocus>
-             </label>
-             <label>
-                <input type="text" name="phone" id="phone" placeholder="Телефон" required autofocus>
-             </label>
-             <a href="#" class="button-reg">Зарегистрироваться</a>
-             <a href="#" class="log-in">Уже есть учетная запись?</a>
-          </form>
+        <div class="reg-box">
+            <h2>Создание учетной записи</h2>
+            <form id="registration">
+                <div class="user-box">
+                    <input id="first_name" type="text" name="" required="">
+                    <label>Имя</label>
+                </div>
+                <div class="user-box">
+                    <input id="last_name" type="text" name="" required="">
+                    <label >Фамилия</label>
+                </div>
+                <div class="user-box">
+                    <input id="phone" type="text" name="" required="">
+                    <label >Телефон</label>
+                </div>
+                <button type="submit" class="button button-reg">Зарегистрироваться</button>
+                <button class="button button-login">Уже есть учетная запись?</button>
+             </form>
+        </div>
        </section>
        <section class="signin-face-form">
           <div class="video-container">
-            <video src="" controls class="video" poster=""></video>
+            <video class="video"></video>
             <div class="signin-face-form_button-container">
               <button id="make-photo_button" class="light-button signin-face-form_enter-button">
                 Сделать фотографию
