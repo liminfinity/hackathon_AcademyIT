@@ -5,6 +5,7 @@ const axios = require('axios');
 const formParser = require('body-parser')
 
 const app = express();
+let user_data;
 
 const port = 3000;
 
@@ -24,6 +25,9 @@ app.get('/', (_, res) => {
 app.get('/autorization', (_, res) => {
     res.sendFile(path.resolve('public/html/autorization.html'));
 })
+app.get('/account/data', (_, res) => {
+    res.send(user_data);
+})
 app.get('/account', (_, res) => {
     res.sendFile(path.resolve('public/html/account.html'));
 })
@@ -34,29 +38,43 @@ app.post('/autorization', async (request, response) => {
     for (let field in data) {
         form_data.append(field, data[field])
     }
-    const result = await axios.post('http://192.168.0.177:5000/check_person', form_data,
-    {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-    })
-    console.log(result.data)
+    let result
+    try {
+        result = await axios.post('http://192.168.0.169:5000/check_person', form_data,
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+        user_data = result.data;
+        console.log(user_data)
+        response.send(result.data)
+    } catch(e) {
+        response.send(JSON.stringify({message: 'Лицо не распознано или отсутствует в базе'}))
+    }
+    
 })
 app.get('/registration', (_, res) => {
     res.sendFile(path.resolve('public/html/registration.html'));
 })
-app.post('/registration', (request, response) => {
+app.post('/registration', async (request, response) => {
     let data = request.body;
     let form_data = new FormData();
     for (let field in data) {
         form_data.append(field, data[field])
     }
-    axios.post('http://192.168.0.177:5000/add_user', form_data,
+    let result;
+    try {
+        result = await axios.post('http://192.168.0.169:5000/check_person', form_data,
         {
             headers: {
-            'Content-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data'
             }
         })
+        response.send(result.data)
+    } catch(e) {
+        response.send(JSON.stringify({message: 'Лицо не распознано или отсутствует в базе'}))
+    }
     
 })
 app.get('/main', (_, res) => {

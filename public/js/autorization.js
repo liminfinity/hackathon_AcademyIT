@@ -1,5 +1,5 @@
 import { ImageCapture } from '/js/imagecapture.js';
-import { getBrowserType } from './additional.js';
+import { getBrowserType, createErrorComponent, ErrorControl } from './additional.js';
 
 class Autorization {
     #video
@@ -63,6 +63,14 @@ class Autorization {
                 },
                 body: data
             })
+            response = await response.json();
+            if (response.message != undefined) {
+                ErrorControl(document.querySelector('.video-container'), createErrorComponent(response.message))
+            }
+            else {
+                location.href = "/account"
+            }
+            
         })
 
         /* let blob_img = await this.#image.takePhoto();

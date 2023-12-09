@@ -38,6 +38,16 @@ input, button {
   background-color: #30353E;
   font-size: 20px;
 }
+body {
+   background-color: #30353E;
+   color: white;
+   overflow: hidden;
+}
+
+a {
+   text-decoration: none;
+}
+
 
 .light-button {
   cursor: pointer;
@@ -60,4 +70,29 @@ input, button {
 
 .light-button:active{
   opacity: 0.5;
+}
+
+button {
+  font-family: Montserrat;
+}
+.error {
+  transform: translate(-50%);
+  left: 50%;
+  z-index: 1;
+  position: absolute;
+  font-family: Montserrat;
+  color: rgb(236 49 49);
+  background: #eaeaea;
+  border-radius: 15px;
+  padding: 15px 20px;
+  top: 2%;
+  font-size: 20px;
+  white-space: nowrap;
+
+}
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
 }

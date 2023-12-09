@@ -1,4 +1,4 @@
-import { validPhone, validName, getBrowserType } from '/js/additional.js';
+import { validPhone, validName, getBrowserType, createErrorComponent, ErrorControl } from '/js/additional.js';
 import { ImageCapture } from '/js/imagecapture.js';
 class Registration {
     #video
@@ -15,6 +15,7 @@ class Registration {
     }
     constructor() {
         this.#video = document.querySelector('.video');
+        this.#video.classList.toggle('hidden')
         this.#button_reg = document.getElementById('make-photo_button');
         this.#cancel_button = document.getElementById('cancel_button');
         this.#signup_button = document.getElementById('registration');
@@ -63,6 +64,8 @@ class Registration {
         this.#video.srcObject = stream;
         this.#image = new ImageCapture(stream.getVideoTracks()[0])
         this.#video.addEventListener("loadedmetadata", () => {
+            this.#video.classList.remove('hidden')
+            this.#video.classList.add('visible')
             this.#video.play();
         });
         this.#button_reg.addEventListener("click", async (e) => {
@@ -84,7 +87,6 @@ class Registration {
                 photo: view.reduce((result, current) => result + ';' + current, ''),
                 about_me: '-'
             })
-            console.log(data)
             let response = await fetch('/registration', {
                 method: 'POST',
                 headers: {
@@ -92,6 +94,12 @@ class Registration {
                 },
                 body: data
             })
+            if (response.message != undefined) {
+                ErrorControl(document.querySelector('.video-container'), createErrorComponent(response.message))
+            }
+            else {
+                location.href = "/account"
+            }
         })
     }
     #closeCamera() {
@@ -99,6 +107,8 @@ class Registration {
             track.stop()
         })
         this.#video.srcObject = null
+        this.#video.classList.add('hidden')
+        this.#video.classList.remove('visible')
     }
     #goToLogin() {
         location.href = "/autorization"

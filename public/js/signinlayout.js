@@ -18,12 +18,10 @@ buttonCancel.onclick = function() {
 
 function Hide() {
   content.style.display = "flex";
-  signInFaceFrom.style.left = '0';
   signInEntry.style.display = "none";
 }
 
 function Show() {
   content.style.display = "grid";
-  signInFaceFrom.style.left = '20px';
   signInEntry.style.display = "flex";
 }
