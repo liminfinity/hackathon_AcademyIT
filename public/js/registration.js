@@ -118,7 +118,7 @@ class Registration {
                 ErrorControl(document.querySelector('.video-container'), createErrorComponent(response.message))
             }
             else {
-                location.href = "/account"
+                location.href = "/autorization"
             }
         })
     }
