@@ -40,7 +40,7 @@ app.post('/autorization', async (request, response) => {
     }
     let result
     try {
-        result = await axios.post('http://192.168.32.67:5000/check_person', form_data,
+        result = await axios.post('http://192.168.0.127:5000/check_person', form_data,
         {
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -65,7 +65,7 @@ app.post('/registration', async (request, response) => {
     }
     let result;
     try {
-        result = await axios.post('http://192.168.32.67:5000/add_user', form_data,
+        result = await axios.post('http://192.168.0.127:5000/add_user', form_data,
         {
             headers: {
                 'Content-Type': 'multipart/form-data'
