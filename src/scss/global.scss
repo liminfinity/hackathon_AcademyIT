@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input, button {
+  appearance: none;
+}
+
+.dark-button {
+  cursor: pointer;
+  color: #FFF;
+  background-color: #30353E;
+  font-size: 20px;
+}
+body {
+   background-color: #30353E;
+   color: white;
+   overflow: hidden;
+}
+
+a {
+   text-decoration: none;
+}
+
+
+.light-button {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  font-size: 20px;
+  color: #30353E;
+}
+
+.dark-button:hover {
+  opacity: 0.7;
+}
+
+.dark-button:active{
+  opacity: 0.5;
+}
+
+.light-button:hover {
+  opacity: 0.7;
+}
+
+.light-button:active{
+  opacity: 0.5;
+}
+
+button {
+  font-family: Montserrat;
+}
+.error {
+  transform: translate(-50%);
+  left: 50%;
+  z-index: 1;
+  position: absolute;
+  font-family: Montserrat;
+  color: rgb(236 49 49);
+  background: #eaeaea;
+  border-radius: 15px;
+  padding: 15px 20px;
+  top: 2%;
+  font-size: 20px;
+  white-space: nowrap;
+
+}
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
